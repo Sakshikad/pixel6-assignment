@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.customer-form, .edit-customer-form{
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .error {
+    display: none;
+    font-size: 0.8em;
+    position: absolute;
+    color: red; 
+  }
+  
+  input:invalid:not(:focus):not(:placeholder-shown) ~ .error {
+    display: block;
+  }
+  .required {
+    color: red;
+  }
+  
