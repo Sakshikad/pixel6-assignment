@@ -45,7 +45,6 @@ const CustomerForm = () => {
     } else {
       setIsRemoveBtnVisible(false);
     }
-
     formData.addresses.forEach((address, index) => {
       if (address.postcode && postcodeDetails[index]) {
         setFormData((prevFormData) => ({
@@ -393,6 +392,23 @@ const CustomerForm = () => {
                   />
                 </div>
               </div>
+
+              {
+                isRemoveBtnVisible &&
+                <div className="flex flex-wrap justify-end mx-auto mb-6 items-center">
+                  <label className="block text-gray-800 text-sm font-medium -mt-3 mx-2" htmlFor='removeAddress'>
+                    Remove Address
+                  </label>
+                  <button
+                    id='removeAddress'
+                    type="button"
+                    className="bg-red-500 text-white font-bold text-xl px-4 rounded-full focus:outline-none focus:shadow-outline mb-4 w-12 h-12 flex items-center justify-center leading-none"
+                    onClick={() => handleRemoveAddress(index)}
+                  >
+                    <i className="fa-solid fa-minus"></i>
+                  </button>
+                </div>
+              }
 
               <hr className="mb-6" />
             </div>
